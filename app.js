@@ -17,3 +17,16 @@ function actualizarLista(newName){
     nameLiElement.textContent = newName;
     nameListElement.appendChild(nameLiElement);
 }
+
+function sortearAmigo(){
+    const sizeNameList = namesList.length;
+    if(sizeNameList < 2) {
+        alert("Ingrese al menos 2 nombres");
+        return;
+    }
+    const pos = Math.floor(Math.random()*(sizeNameList-1));
+    const winner = namesList[pos];
+    const resultListElement = document.querySelector(".result-list");
+    document.querySelector(".name-list").innerHTML = "";
+    resultListElement.innerHTML = `Tu amigo secreto es: ${winner}`;
+}
